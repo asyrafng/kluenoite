@@ -1,0 +1,88 @@
+# image will be published to ghcr.io/<user>/<name>
+name: kluenoite
+# description will be included in the image's metadata
+description: Kinoite+Ublue+custom kernel
+
+# the base image to build on top of (FROM) and the version tag to use
+# using base kinoite images from fedora
+base-image: ghcr.io/ublue-os/kinoite-nokmod
+image-version: 38 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+
+  - type: files
+    files:
+      - usr: /usr
+            # copies config/files/usr into your image's /usr
+            # configuration you wish to end up in /etc/ on the booted system
+            # should be added into /usr/etc/ as that is the proper "distro"
+            # config directory on ostree. Read more in the files module's README
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+    install:
+      # - micro
+      # - starship
+      - libcap-ng-devel 
+      - procps-ng-devel
+      - uksmd
+      - kvantum
+
+    remove:
+      - firefox # default firefox removed in favor of flatpak
+      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+  
+  - type: bling # configure what to pull in from ublue-os/bling
+    install:
+      - fonts # selection of common good free fonts
+      - justfiles
+        # add "!include /usr/share/ublue-os/just/bling.just"
+        # in your custom.just (added by default) or local justfile
+      - nix-installer # shell shortcuts for determinate system's nix installers
+      - ublue-os-wallpapers
+      - ublue-update # https://github.com/ublue-os/ublue-update
+
+
+  - type: yafti
+      # if included, yafti and it's dependencies (pip & libadwaita)
+      #  will be installed and set up
+    custom-flatpaks:
+      # this section is optional
+        - Floorp: one.ablaze.floorp
+        - Krita: org.kde.krita
+        - SaveDesktop: io.github.vikdevelop.SaveDesktop
+        - Microsoft Edge Dev:  com.microsoft.EdgeDev 
+        - RawTherapee: com.rawtherapee.RawTherapee 
+        - Stremio: com.stremio.Stremio 
+        - Bottles: com.usebottles.bottles 
+        - YtDownload: io.github.aandrew_me.ytdn 
+        - Master PDF Editor: net.codeindustry.MasterPDFEditor
+        - Joplin: net.cozic.joplin_desktop 
+        - Bleachbit: org.bleachbit.BleachBit 
+        - FreeFileSync: org.freefilesync.FreeFileSync 
+        - Inkscape: org.inkscape.Inkscape 
+        - Haruna: org.kde.haruna 
+        - Kdenlive: org.kde.kdenlive 
+        - Kget: org.kde.kget 
+        - Ktorrent: org.kde.ktorrent 
+        - Libreoffice: org.libreoffice.LibreOffice 
+        - OnlyOffice: org.onlyoffice.desktopeditors 
+        - Telegram: org.telegram.desktop 
+        - Zoom: us.zoom.Zoom 
+
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      # - rpmfusion.sh
+      # - main-post-install.sh
+      - replace_kernel_cachy.sh
+      - signing.sh
+      
+  - type: systemd
+    system:
+      enabled:
+        - uksmd.service
