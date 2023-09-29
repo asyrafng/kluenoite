@@ -1,10 +1,8 @@
 # Kluenoite
-Vanilla Fedora Kinoite 38 based OCI images with Universal Blue like modification and CachyOS Kernel and Addons.
+Fedora Kinoite 38 based OCI images with CachyOS Kernel and Addons.
 
-Whats changed from Universal Blue Startingpoint :
-- Changed based image to vanilla Kinoite
-- removed kmods
-- removed/add some packages
+Features :
+- using -nokmods variant from Ublue
 - Change kernel to cachyOS Bore-EEVDF from COPR
 - Add and enable UKSMD from cachyOS addon
 - Add Chili SDDM theme
