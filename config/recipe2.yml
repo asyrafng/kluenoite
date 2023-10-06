@@ -80,6 +80,7 @@ modules:
       # - rpmfusion.sh
       # - main-post-install.sh
       - replace_kernel_cachy.sh
+      - build-kmod-v4l2loopback.sh
       - signing.sh
       
   - type: systemd
