@@ -40,7 +40,7 @@ jobs:
         # Don't add module configuration files, you will get errors.
         recipe:
           - recipe.yml
-          # - kmods-lts.yml
+          - kmods-lts.yml
 # !!!
 
     steps:
