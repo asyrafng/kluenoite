@@ -13,4 +13,9 @@ KERNEL="$(rpm -q "${KERNEL_NAME}" --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')
 RELEASE="$(rpm -E '%fedora')"
 
 chmod 1777 /tmp /var/tmp
+rpm-ostree install \
+    akmod-v4l2loopback-*.fc${RELEASE}.${ARCH}
 akmods --force --kernels "${KERNEL}" --kmod v4l2loopback
+
+modinfo /usr/lib/modules/${KERNEL}/extra/v4l2loopback/v4l2loopback.ko.xz > /dev/null \
+|| (find /var/cache/akmods/v4l2loopback/ -name \*.log -print -exec cat {} \; && exit 1)
