@@ -31,6 +31,8 @@ modules:
       - procps-ng-devel
       - uksmd
       - kvantum
+      - tlp
+      - powertop
 
     remove:
       - firefox # default firefox removed in favor of flatpak
