@@ -26,6 +26,7 @@ modules:
       # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
     install:
        - kvantum
+       - v4l2loopback
        
     remove:
       - firefox # default firefox removed in favor of flatpak
