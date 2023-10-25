@@ -29,7 +29,7 @@ modules:
       # - starship
       - libcap-ng-devel 
       - procps-ng-devel
-      - uksmd
+      - uksmd-rawhide
       - kvantum
       - tlp
       - powertop
