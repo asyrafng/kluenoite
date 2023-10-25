@@ -5,8 +5,8 @@ description: Kinoite+Ublue+custom kernel
 
 # the base image to build on top of (FROM) and the version tag to use
 # using base kinoite images from fedora
-base-image: ghcr.io/ublue-os/kinoite-nokmods
-image-version: 38 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: 39 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -44,8 +44,8 @@ modules:
       - justfiles
         # add "!include /usr/share/ublue-os/just/bling.just"
         # in your custom.just (added by default) or local justfile
-      - nix-installer # shell shortcuts for determinate system's nix installers
-      - ublue-os-wallpapers
+      # - nix-installer # shell shortcuts for determinate system's nix installers
+      # - ublue-os-wallpapers
       - ublue-update # https://github.com/ublue-os/ublue-update
 
 
