@@ -25,14 +25,10 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
     install:
-      # - micro
-      # - starship
       - libcap-ng-devel 
       - procps-ng-devel
       - uksmd-rawhide
       - kvantum
-      - tlp
-      - powertop
 
     remove:
       - firefox # default firefox removed in favor of flatpak
@@ -45,7 +41,7 @@ modules:
         # add "!include /usr/share/ublue-os/just/bling.just"
         # in your custom.just (added by default) or local justfile
       # - nix-installer # shell shortcuts for determinate system's nix installers
-      # - ublue-os-wallpapers
+      - laptop
       - ublue-update # https://github.com/ublue-os/ublue-update
 
 
@@ -79,8 +75,6 @@ modules:
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
-      # - rpmfusion.sh
-      # - main-post-install.sh
       - replace_kernel_cachy.sh
       - signing.sh
       
