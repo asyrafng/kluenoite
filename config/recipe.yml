@@ -36,40 +36,8 @@ modules:
   
   - type: bling # configure what to pull in from ublue-os/bling
     install:
-      - justfiles
-        # add "!include /usr/share/ublue-os/just/bling.just"
-        # in your custom.just (added by default) or local justfile
-      # - nix-installer # shell shortcuts for determinate system's nix installers
       - laptop
       - ublue-update # https://github.com/ublue-os/ublue-update
-
-
-  - type: yafti
-      # if included, yafti and it's dependencies (pip & libadwaita)
-      #  will be installed and set up
-    custom-flatpaks:
-      # this section is optional
-        - Floorp: one.ablaze.floorp
-        - Krita: org.kde.krita
-        - SaveDesktop: io.github.vikdevelop.SaveDesktop
-        - Microsoft Edge Dev:  com.microsoft.EdgeDev 
-        - RawTherapee: com.rawtherapee.RawTherapee 
-        - Stremio: com.stremio.Stremio 
-        - Bottles: com.usebottles.bottles 
-        - YtDownload: io.github.aandrew_me.ytdn 
-        - Master PDF Editor: net.codeindustry.MasterPDFEditor
-        - Joplin: net.cozic.joplin_desktop 
-        - Bleachbit: org.bleachbit.BleachBit 
-        - FreeFileSync: org.freefilesync.FreeFileSync 
-        - Inkscape: org.inkscape.Inkscape 
-        - Haruna: org.kde.haruna 
-        - Kdenlive: org.kde.kdenlive 
-        - Kget: org.kde.kget 
-        - Ktorrent: org.kde.ktorrent 
-        - Libreoffice: org.libreoffice.LibreOffice 
-        - OnlyOffice: org.onlyoffice.desktopeditors 
-        - Telegram: org.telegram.desktop 
-        - Zoom: us.zoom.Zoom 
 
   - type: script
     scripts:
