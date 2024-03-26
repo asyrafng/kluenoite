@@ -28,7 +28,7 @@ modules:
     install:
       - libcap-ng-devel 
       - procps-ng-devel
-      - uksmd-rawhide
+      - uksmd
       - kvantum
       - tailscale
 
