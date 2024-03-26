@@ -1,0 +1,54 @@
+# image will be published to ghcr.io/<user>/<name>
+name: kluenoitenext
+# description will be included in the image's metadata
+description: kluenoite with beta packages
+
+# the base image to build on top of (FROM) and the version tag to use
+# using base kinoite images from fedora
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: 40 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+
+  - type: files
+    files:
+      - usr: /usr
+            # copies config/files/usr into your image's /usr
+            # configuration you wish to end up in /etc/ on the booted system
+            # should be added into /usr/etc/ as that is the proper "distro"
+            # config directory on ostree. Read more in the files module's README
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
+      - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    install:
+      - libcap-ng-devel 
+      - procps-ng-devel
+      - uksmd-rawhide
+      - kvantum
+      - tailscale
+
+    remove:
+      - firefox # default firefox removed in favor of flatpak
+      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+  
+  - type: bling # configure what to pull in from ublue-os/bling
+    install:
+      - laptop
+      - ublue-update # https://github.com/ublue-os/ublue-update
+
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - replace_kernel_cachy.sh
+      
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  
+  - type: systemd
+    system:
+      enabled:
+        - uksmd.service
