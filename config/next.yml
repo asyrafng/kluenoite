@@ -22,7 +22,8 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+      # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
+      -  https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-lto-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
     install:
@@ -44,7 +45,7 @@ modules:
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
-      - replace_kernel_cachy.sh
+      - replace_kernel_cachy_lto.sh
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
   
