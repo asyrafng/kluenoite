@@ -15,7 +15,7 @@ sleep 2
 ### COMMENT OUT BELOW LINE IF USING LOCALLY ###
 rpm-ostree cliwrap install-to-root / && \
 rpm-ostree override remove $INSTALLED_KERNEL_PACKAGES --install=kernel-cachyos-lto
-rpm-ostree install kernel-cachyos-lto-devel-matched kernel-cachyos-lto-devel
+# rpm-ostree install kernel-cachyos-lto-devel-matched kernel-cachyos-lto-devel
 # rpm-ostree override remove $INSTALLED_KERNEL_PACKAGES --install=kernel-specified
 # rpm-ostree override replace "https://download.copr.fedorainfracloud.org/results/bieszczaders/kernel-cachyos/fedora-38-x86_64/06407061-kernel-cachyos-bore-eevdf/kernel-cachyos-bore-eevdf-6.5.3-cbe3.0.fc38.x86_64.rpm"
 
