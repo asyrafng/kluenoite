@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/<user>/<name>
-name: kluenoitenext
+name: kluenoitelite
 # description will be included in the image's metadata
-description: kluenoite with beta packages
+description: kluenoite lite image
 
 # the base image to build on top of (FROM) and the version tag to use
 # using base kinoite images from fedora
