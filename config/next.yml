@@ -32,6 +32,7 @@ modules:
       - uksmd
       - kvantum
       - tailscale
+      - waydroid
 
     remove:
       - firefox # default firefox removed in favor of flatpak
