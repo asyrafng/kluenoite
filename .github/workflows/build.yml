@@ -22,7 +22,6 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here 
-          - lite.yml
           - next.yml
     steps:
        # the build is fully handled by the reusable github action
