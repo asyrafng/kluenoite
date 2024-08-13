@@ -40,7 +40,6 @@ modules:
   
   - type: bling # configure what to pull in from ublue-os/bling
     install:
-      - laptop
       - ublue-update # https://github.com/ublue-os/ublue-update
 
   - type: script
