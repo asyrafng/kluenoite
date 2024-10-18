@@ -209,30 +209,26 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                        ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/suspend_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/suspend_primary.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/restart_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/restart_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/shutdown_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/shutdown_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/other.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/other.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other...")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: mainStack.push(userPromptComponent)
                         enabled: true
                         visible: !userListComponent.showUsernamePrompt
@@ -353,30 +349,26 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/suspend_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/suspend_primary.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/restart_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/restart_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/shutdown_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/shutdown_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/bluish-sddm/components/artwork/switch_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/switch_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","List Users")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: mainStack.pop()
                     }
                 ]
