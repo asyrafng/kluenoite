@@ -209,25 +209,25 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                        ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/suspend_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/suspend_primary.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/restart_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/restart_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/shutdown_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/shutdown_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/other.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/other.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other...")
                         onClicked: mainStack.push(userPromptComponent)
                         enabled: true
@@ -349,25 +349,25 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/suspend_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/suspend_primary.svg"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/restart_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/restart_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/shutdown_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/shutdown_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        icon.name: "/usr/share/sddm/themes/Bluish-SDDM-6/components/artwork/switch_primary.svg"
+                        icon.name: "/usr/share/sddm/themes/bluish-sddm/components/artwork/switch_primary.svg"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","List Users")
                         onClicked: mainStack.pop()
                     }
