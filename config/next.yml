@@ -50,8 +50,3 @@ modules:
       - replace_kernel_cachy_lto.sh
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-  
-  - type: systemd
-    system:
-      enabled:
-        # - uksmd.service
