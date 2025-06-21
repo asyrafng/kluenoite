@@ -54,4 +54,4 @@ modules:
   - type: systemd
     system:
       enabled:
-        - uksmd.service
+        # - uksmd.service
