@@ -6,7 +6,7 @@ description: kluenoite with beta packages
 # the base image to build on top of (FROM) and the version tag to use
 # using base kinoite images from fedora
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 43 # latest is also supported if you want new updates ASAP
+image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -23,7 +23,7 @@ modules:
   - type: rpm-ostree
     repos:
       # - https://copr.fedorainfracloud.org/copscripts
-      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-43/bieszczaders-kernel-cachyos-fedora-lto-43.repo
+      - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-42/bieszczaders-kernel-cachyos-fedora-lto-42.repo
       # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-41/bieszczaders-kernel-cachyos-addons-fedora-42.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
