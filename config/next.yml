@@ -44,9 +44,8 @@ modules:
   #  install:
   #    - ublue-update # https://github.com/ublue-os/ublue-update
 
-  - type: script
-    scripts:
-      # this sets up the proper policy & signing files for signed images to work
+  # - type: script
+  #   scripts:
       # - replace_kernel_cachy_lto.sh
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
