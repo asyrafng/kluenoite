@@ -34,6 +34,7 @@ modules:
       - kvantum
       - tailscale
       - terra-release
+      - terra-gpg-keys
       - vala-panel-appmenu-gtk-module
       
     remove:
