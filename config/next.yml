@@ -26,7 +26,7 @@ modules:
       # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-42/bieszczaders-kernel-cachyos-fedora-lto-42.repo
       # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-41/bieszczaders-kernel-cachyos-addons-fedora-42.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-      - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+      - https://raw.githubusercontent.com/terrapkg/packages/f44/anda/terra/release/terra.repo
     install:
       # - libcap-ng-devel 
       # - procps-ng-devel
