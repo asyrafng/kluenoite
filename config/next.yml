@@ -23,7 +23,7 @@ modules:
   - type: rpm-ostree
     repos:
       # - https://copr.fedorainfracloud.org/copscripts
-      # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-42/bieszczaders-kernel-cachyos-fedora-lto-42.repo
+       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-lto/repo/fedora-44/bieszczaders-kernel-cachyos-fedora-lto-44.repo
       # - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-41/bieszczaders-kernel-cachyos-addons-fedora-42.repo
       - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       # - https://raw.githubusercontent.com/terrapkg/packages/f44/anda/terra/release/terra.repo
@@ -45,8 +45,8 @@ modules:
   #  install:
   #    - ublue-update # https://github.com/ublue-os/ublue-update
 
-  # - type: script
-  #   scripts:
-      # - replace_kernel_cachy_lto.sh
+   - type: script
+     scripts:
+       - replace_kernel_cachy_lto.sh
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
